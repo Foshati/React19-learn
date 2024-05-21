@@ -1,5 +1,6 @@
 import { version } from "react";
 import PostList from "./components/Post/PostList";
+
 function App() {
   return (
     <>

@@ -1,40 +1,36 @@
-import { use } from 'react'
+import { use } from "react";
 
-import { ThemeContext, ThemeProvider } from '../../context/ThemeContext'
+import { ThemeProvider, ThemeContext } from "../../context/ThemeContext";
 
 function Card() {
-  const { theme, toggleTheme } = use(ThemeContext)
+  // destructure property value
+  const { theme, toggleTheme } = use(ThemeContext);
 
   return (
-    <div
-      className={`max-w-md mx-auto my-8 rounded-lg p-6 ${
-        theme === 'light' ? 'bg-slate-200' : 'bg-slate-800'
-      }`}
-    >
-      <p className={theme === 'light' ? 'text-slate-800' : 'text-slate-200'}>
-        By default, Actions are submitted within a transition, keeping the
-        current page interactive while the action is processing. Since Actions
-        support async functions, we’ve also added the ability to use async/await
-        in transitions. This allows you to show pending UI with the isPending
-        state of a transition when an async request like fetch starts, and show
-        the pending UI all the way through the update being applied.
-      </p>
-      <button
-        onClick={toggleTheme}
-        className='mt-6 px-4 py-2 bg-slate-600 text-white rounded-md outline-none'
+    <main className="m-6">
+      <div
+        className={`p-6  my-6 card mx-auto flex justify-center items-center ${theme === "dark" ? "bg-slate-800" : "bg-slate-200"} `}
       >
-        {theme === 'light' ? 'Dark Mode' : 'Light Mode'}
-      </button>
-    </div>
-  )
+        <h2 className="text-2xl text-red-500 text">use()=useContext()</h2>
+        <p className={theme === "dark" ? "text-slate-200" : "text-slate-800"}>
+          Call useContext at the top level of your component to read and
+          subscribe to context. / useContext returns the context value for the
+          context you passed. To determine the context value, React searches the
+          component tree and finds the closest context provider above for that
+          particular context.
+        </p>
+        <button className="m-4 mt-4 btn btn-wide" onClick={toggleTheme}>
+          {theme === "dark" ? "Dark mode" : "light mode"}
+        </button>
+      </div>
+    </main>
+  );
 }
 
-function Theme() {
+export default function Theme() {
   return (
     <ThemeProvider>
       <Card />
     </ThemeProvider>
-  )
+  );
 }
-
-export default Theme

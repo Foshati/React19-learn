@@ -1,5 +1,6 @@
 import { version } from "react";
 import PostList from "./components/Post/PostList";
+import Theme from "./components/Theme/Card";
 
 function App() {
   return (
@@ -8,6 +9,7 @@ function App() {
 
       <div>
         <PostList />
+        <Theme />
       </div>
     </>
   );

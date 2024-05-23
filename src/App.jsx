@@ -1,6 +1,7 @@
 import { version } from "react";
 import PostList from "./components/Post/PostList";
 import Theme from "./components/Theme/Card";
+import AddProduct from "./components/Product/AddProduct";
 
 function App() {
   return (
@@ -10,6 +11,7 @@ function App() {
       <div>
         <PostList />
         <Theme />
+        <AddProduct />
       </div>
     </>
   );

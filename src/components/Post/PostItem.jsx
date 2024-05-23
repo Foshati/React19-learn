@@ -13,7 +13,7 @@ export default function PostItem() {
   return (
     <div>
       {posts.map((post) => (
-        <div className="p-6 m-6 card bg-slate-700" key={post.id}>
+        <div className="p-س6 m-6 card bg-slate-700" key={post.id}>
           <h2 className="text-yellow-500 card-title ">{post.title}</h2>
           <p className="card-body ">{post.body}</p>
         </div>
